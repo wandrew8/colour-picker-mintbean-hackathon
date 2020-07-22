@@ -1,26 +1,18 @@
-# Suave Color Palette Generator
-
-Mintbean Hackathon - 06 / 08 / 20
+# Palette Generator
 
 ## About the Project
-
-Goal was to create a color palette generator in 4 hours or less. 
-
-I placed first! :tada:
-
-See the project [here](https://5edede9ee1b44c0007822d3e--heuristic-williams-fba968.netlify.app/)
-
-![Palette Generator](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/screenshot.png)
-![First Place](https://github.com/xynyx/colour-picker-mintbean-hackathon/blob/master/docs/me.jpeg)
+This project was built for a mintbean hackathon on July 22nd 2020. The objective for this hackathon was to built upon an existing color generator application. I added a number of new features including the ability to switch between hex and RGB values, a swatch component to select preset colors, the ability to copy color values to the clipboard, and many styling upgrades. Check out my deployed site [here](https://wandrew8.github.io/colour-picker-mintbean-hackathon/)
 
 ## Built With
 - React
 - TinyColor
+- React Bootstrap
+- react-clipboard.js
+- color-scheme
 
-## Resources
-- [Hackathon Winner Post](https://www.linkedin.com/posts/mintbean_careerhack-hackathons-careerhack-activity-6675885447970906112-Qe7W)
+## Sources
+- The inspiration and starter code for this project come from [here](https://github.com/xynyx/colour-picker-mintbean-hackathon)
 
-## Acknowledgements
-- [Mintbean Hackathon](https://www.mintbean.io/)
+
 
 
