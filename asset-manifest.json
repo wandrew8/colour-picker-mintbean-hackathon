@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/colour-picker-mintbean-hackathon/static/css/main.ae84b82e.chunk.css",
-    "main.js": "/colour-picker-mintbean-hackathon/static/js/main.7f20382d.chunk.js",
-    "main.js.map": "/colour-picker-mintbean-hackathon/static/js/main.7f20382d.chunk.js.map",
+    "main.css": "/colour-picker-mintbean-hackathon/static/css/main.06bd1901.chunk.css",
+    "main.js": "/colour-picker-mintbean-hackathon/static/js/main.2a51c3bc.chunk.js",
+    "main.js.map": "/colour-picker-mintbean-hackathon/static/js/main.2a51c3bc.chunk.js.map",
     "runtime-main.js": "/colour-picker-mintbean-hackathon/static/js/runtime-main.667e5161.js",
     "runtime-main.js.map": "/colour-picker-mintbean-hackathon/static/js/runtime-main.667e5161.js.map",
-    "static/js/2.54dd110e.chunk.js": "/colour-picker-mintbean-hackathon/static/js/2.54dd110e.chunk.js",
-    "static/js/2.54dd110e.chunk.js.map": "/colour-picker-mintbean-hackathon/static/js/2.54dd110e.chunk.js.map",
+    "static/js/2.ff06c8d9.chunk.js": "/colour-picker-mintbean-hackathon/static/js/2.ff06c8d9.chunk.js",
+    "static/js/2.ff06c8d9.chunk.js.map": "/colour-picker-mintbean-hackathon/static/js/2.ff06c8d9.chunk.js.map",
     "index.html": "/colour-picker-mintbean-hackathon/index.html",
-    "precache-manifest.ff231d72102d9a5754b207f56a19250a.js": "/colour-picker-mintbean-hackathon/precache-manifest.ff231d72102d9a5754b207f56a19250a.js",
+    "precache-manifest.f62270cd4d377f63bf2491a403c7ae73.js": "/colour-picker-mintbean-hackathon/precache-manifest.f62270cd4d377f63bf2491a403c7ae73.js",
     "service-worker.js": "/colour-picker-mintbean-hackathon/service-worker.js",
-    "static/css/main.ae84b82e.chunk.css.map": "/colour-picker-mintbean-hackathon/static/css/main.ae84b82e.chunk.css.map",
-    "static/js/2.54dd110e.chunk.js.LICENSE.txt": "/colour-picker-mintbean-hackathon/static/js/2.54dd110e.chunk.js.LICENSE.txt"
+    "static/css/main.06bd1901.chunk.css.map": "/colour-picker-mintbean-hackathon/static/css/main.06bd1901.chunk.css.map",
+    "static/js/2.ff06c8d9.chunk.js.LICENSE.txt": "/colour-picker-mintbean-hackathon/static/js/2.ff06c8d9.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.667e5161.js",
-    "static/js/2.54dd110e.chunk.js",
-    "static/css/main.ae84b82e.chunk.css",
-    "static/js/main.7f20382d.chunk.js"
+    "static/js/2.ff06c8d9.chunk.js",
+    "static/css/main.06bd1901.chunk.css",
+    "static/js/main.2a51c3bc.chunk.js"
   ]
 }
