@@ -8,7 +8,8 @@ export default function Settings({
   changeSetting,
   changeSettingValue,
   changeColorType,
-  colorType
+  colorType,
+  color
 }) {
   const handleHexChange = e => {
     e.preventDefault();
@@ -38,7 +39,7 @@ export default function Settings({
 
   return (
     <div>
-      <Navbar expand="lg" bg="dark" variant="dark">
+      <Navbar style={{backgroundColor: tinycolor(color).darken(30).toString()}} expand="lg" variant="dark">
         <Nav className="mr-auto">
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
 
@@ -100,6 +101,9 @@ export default function Settings({
                   Saturate
               </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link id="random" onClick={() => setRandom()}>
+              Random
+            </Nav.Link>
             <Nav.Link 
               onClick={() => handleChangeColorType("rgb")}
               className={colorType === "rgb" ? "active" : null}>
@@ -112,9 +116,6 @@ export default function Settings({
             </Nav.Link>
           </Navbar.Collapse>
         </Nav>
-        <Nav.Link id="random" onClick={() => setRandom()}>
-          Random
-        </Nav.Link>
         <Form onChange={e => handleHexChange(e)} inline>
           <Form.Label style={{fontSize: "2rem", cursor: "pointer"}}>🎨
           <FormControl style={{opacity: 0}} type="color" />

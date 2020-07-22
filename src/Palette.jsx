@@ -1,10 +1,11 @@
 import React from "react";
 import Colors from "./Colors";
+import { SwatchesPicker } from 'react-color'
 import "./Palette.css";
 
 const tinycolor = require("tinycolor2");
 
-export default function Palette({ isSuccess, setIsSuccess, color, colorType, variation, setting, settingValue }) {
+export default function Palette({ isSuccess, setIsSuccess, color, setColor, colorType, variation, setting, settingValue }) {
   let colors;
   // Using a switch to set variation type set
   switch (variation) {
@@ -63,5 +64,20 @@ export default function Palette({ isSuccess, setIsSuccess, color, colorType, var
     });
   }
 
-  return <div id="container">{colorPalette}</div>;
+  const setNewColor = color => {
+    setColor(color.hex)
+  }
+
+  return (
+    <div className="palette">
+      <div id="container">{colorPalette}</div>
+      <SwatchesPicker 
+        color={color}
+        onChangeComplete={setNewColor}
+        className="swatch"
+        width="100%"
+        height="auto"
+      />
+    </div>
+  )
 }

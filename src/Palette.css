@@ -1,10 +1,17 @@
 .color {
   flex: 1;
   border: 1px solid rgba(0, 0, 0, 0.089);
-  height: 90.95vh;
+  height: 100vh;
 }
 
 #container {
   display: flex;
   height: 100%;
 }
+
+.swatch {
+  padding-top: 2rem;
+  position: absolute;
+  bottom: 1rem;
+}
+

@@ -5,9 +5,9 @@ import Settings from "./Navbar";
 
 function App() {
   const [ colorType, setColorType ] = useState('hex');
-  const [ color, ChangeColor ] = useState("#8feaff");
+  const [ color, ChangeColor ] = useState("#47c6ff");
   const [ variation, changeVariation ] = useState("tetrad");
-  const [ setting, changeSetting ] = useState();
+  const [ setting, changeSetting ] = useState("saturate");
   const [ settingValue, changeSettingValue ] = useState(20);
 
   return (
@@ -19,6 +19,7 @@ function App() {
         changeColor={ChangeColor}
         changeSettingValue={changeSettingValue}
         colorType={colorType}
+        color={color}
       />
       <Palette
         colorType={colorType}
@@ -26,6 +27,7 @@ function App() {
         setting={setting}
         variation={variation}
         color={color}
+        setColor={ChangeColor}
       />
     </div>
   );
