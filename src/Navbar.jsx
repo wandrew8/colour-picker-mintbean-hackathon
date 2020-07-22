@@ -1,31 +1,35 @@
 import React from "react";
 import { Navbar, Form, Nav, FormControl, NavDropdown } from "react-bootstrap";
-
 const tinycolor = require("tinycolor2");
 
 export default function Settings({
-  changeHex,
+  changeColor,
   changeVariation,
   changeSetting,
   changeSettingValue,
+  changeColorType,
+  colorType
 }) {
   const handleHexChange = e => {
     e.preventDefault();
-    changeHex(e.target.value);
+    changeColor(e.target.value);
   };
 
   const handleVariationChange = variation => {
     changeVariation(variation);
   };
 
-  const changeSettings = e => {
-    const setting = e.target.getAttribute("value");
+  const changeSettings = setting => {
     changeSetting(setting);
   };
 
+  const handleChangeColorType = type => {
+    changeColorType(type);
+  }
+
   const setRandom = () => {
     const randomColor = tinycolor.random().toHexString();
-    changeHex(randomColor);
+    changeColor(randomColor);
   };
 
   const handleSettingValueChange = e => {
@@ -66,51 +70,55 @@ export default function Settings({
               <NavDropdown.Item eventKey="tetrad">Tetrad</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown.Divider />
-
-            <Nav.Link
-              value={"lighten"}
-              eventKey={"lighten"}
-              onClick={e => changeSettings(e)}
-            >
-              Lighten
-            </Nav.Link>
-            <Nav.Link value={"brighten"} onClick={e => changeSettings(e)}>
-              Brighten
-            </Nav.Link>
-            <Nav.Link value={"darken"} onClick={e => changeSettings(e)}>
-              Darken
-            </Nav.Link>
-            <Nav.Link value={"desaturate"} onClick={e => changeSettings(e)}>
-              Desaturate
-            </Nav.Link>
-            <Nav.Link value={"saturate"} onClick={e => changeSettings(e)}>
-              Saturate
-            </Nav.Link>
-            <Nav.Link value={"greyscale"} onClick={e => changeSettings(e)}>
-              Greyscale
-            </Nav.Link>
+    
             <NavDropdown
-              onSelect={e => handleSettingValueChange(e)}
-              title="Change Value (%)"
+              onSelect={e => changeSettings(e)}
+              title="Settings"
+              id="settings"
             >
-              <NavDropdown.Item eventKey="2">10</NavDropdown.Item>
-              <NavDropdown.Item eventKey="4">20</NavDropdown.Item>
-              <NavDropdown.Item eventKey="6">30</NavDropdown.Item>
-              <NavDropdown.Item eventKey="8">40</NavDropdown.Item>
-              <NavDropdown.Item eventKey="12">50</NavDropdown.Item>
-              <NavDropdown.Item eventKey="16">60</NavDropdown.Item>
-              <NavDropdown.Item eventKey="20">70</NavDropdown.Item>
-              <NavDropdown.Item eventKey="30">80</NavDropdown.Item>
-              <NavDropdown.Item eventKey="40">90</NavDropdown.Item>
-              <NavDropdown.Item eventKey="50">100</NavDropdown.Item>
+              <NavDropdown.Item eventKey="lighten">
+                  Lighten
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+
+              <NavDropdown.Item eventKey="brighten">
+                  Brighten
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+
+              <NavDropdown.Item eventKey="darken">
+                  Darken
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+
+              <NavDropdown.Item eventKey="desaturate">
+                  Desaturate
+              </NavDropdown.Item>
+              <NavDropdown.Divider />
+
+              <NavDropdown.Item eventKey="saturate">
+                  Saturate
+              </NavDropdown.Item>
             </NavDropdown>
+            <Nav.Link 
+              onClick={() => handleChangeColorType("rgb")}
+              className={colorType === "rgb" ? "active" : null}>
+              RGB
+            </Nav.Link>
+            <Nav.Link 
+              onClick={() => handleChangeColorType("hex")}
+              className={colorType === "hex" ? "active" : null}>
+              Hex
+            </Nav.Link>
           </Navbar.Collapse>
         </Nav>
         <Nav.Link id="random" onClick={() => setRandom()}>
           Random
         </Nav.Link>
         <Form onChange={e => handleHexChange(e)} inline>
-          <FormControl type="text" placeholder="#77d36a" className="mr-sm-2" />
+          <Form.Label style={{fontSize: "2rem", cursor: "pointer"}}>🎨
+          <FormControl style={{opacity: 0}} type="color" />
+          </Form.Label>
         </Form>
       </Navbar>
     </div>

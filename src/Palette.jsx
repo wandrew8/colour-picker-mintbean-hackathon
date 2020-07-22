@@ -4,30 +4,30 @@ import "./Palette.css";
 
 const tinycolor = require("tinycolor2");
 
-export default function Palette({ hex, variation, setting, settingValue }) {
+export default function Palette({ isSuccess, setIsSuccess, color, colorType, variation, setting, settingValue }) {
   let colors;
   // Using a switch to set variation type set
   switch (variation) {
     case "tetrad":
-      colors = tinycolor(hex).tetrad();
+      colors = tinycolor(color).tetrad();
       break;
     case "analogous":
-      colors = tinycolor(hex).analogous();
+      colors = tinycolor(color).analogous();
       break;
     case "monochromatic":
-      colors = tinycolor(hex).monochromatic();
+      colors = tinycolor(color).monochromatic();
       break;
     case "splitcomplement":
-      colors = tinycolor(hex).splitcomplement();
+      colors = tinycolor(color).splitcomplement();
       break;
     case "triad":
-      colors = tinycolor(hex).triad();
+      colors = tinycolor(color).triad();
       break;
     case "tetrad":
-      colors = tinycolor(hex).tetrad();
+      colors = tinycolor(color).tetrad();
       break;
     case "complement":
-      colors = tinycolor(hex).complement().toHexString();
+      colors = tinycolor(color).complement().toHexString();
       break;
   }
 
@@ -39,7 +39,6 @@ export default function Palette({ hex, variation, setting, settingValue }) {
       darken: tinycolor(color).darken(settingValue).toString(),
       desaturate: tinycolor(color).desaturate(settingValue).toString(),
       saturate: tinycolor(color).saturate(settingValue).toString(),
-      greyscale: tinycolor(color).greyscale(settingValue).toString(),
       undefined: color,
     };
 
@@ -52,10 +51,15 @@ export default function Palette({ hex, variation, setting, settingValue }) {
   } else {
     colorPalette = colors.map(t => {
       let hexColor = t.toHexString();
-
+      let rgbColor = t.toRgbString();
+      t.getAlpha();
+      rgbColor = settings(rgbColor);
       hexColor = settings(hexColor);
 
-      return <Colors hex={hexColor} />;
+      return <Colors 
+        isSuccess={isSuccess}
+        setIsSuccess={setIsSuccess}
+        color={colorType === "rgb" ? rgbColor : hexColor} />;
     });
   }
 
